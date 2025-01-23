@@ -1,2 +1,2 @@
-# JetpackCompose-SuperIntro-StackMobile
-Projeto de estudo sobre Jetpack Compose (para desenvolvimento mobile) 
+# ToDoList-AndroidCompose
+Projeto de estudo do Android Compose para criação de uma lista de tarefas
