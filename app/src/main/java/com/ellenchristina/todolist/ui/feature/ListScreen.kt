@@ -27,7 +27,7 @@ import com.ellenchristina.todolist.ui.theme.ToDoListTheme
 
 @Composable
 fun ListScreen() {
-    
+    ListContent(todos = emptyList())
 }
 
 @Composable
