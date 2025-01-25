@@ -1,5 +1,6 @@
 package com.ellenchristina.todolist.ui.feature
 
+import android.window.SplashScreen
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.consumeWindowInsets
@@ -26,17 +27,23 @@ import com.ellenchristina.todolist.ui.components.TodoItem
 import com.ellenchristina.todolist.ui.theme.ToDoListTheme
 
 @Composable
-fun ListScreen() {
-    ListContent(todos = emptyList())
+fun ListScreen(
+    navigateToAddEditScreen: (id: Long?) -> Unit,
+) {
+    ListContent(
+        todos = emptyList(),
+        onAddItemClick = { navigateToAddEditScreen(null) },
+    )
 }
 
 @Composable
 fun ListContent(
-    todos: List<Todo>
+    todos: List<Todo>,
+    onAddItemClick: (id: Long?) -> Unit,
 ) {
     Scaffold ( // esqueleto de design pronto
         floatingActionButton = {
-            FloatingActionButton(onClick = { /*TODO*/ }) {
+            FloatingActionButton(onClick = { onAddItemClick(null) }) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
             }
         }
@@ -71,7 +78,8 @@ private fun ListContentPreview() {
                 todo1,
                 todo2,
                 todo3,
-            )
+            ),
+            onAddItemClick = {},
         )
     }
 }

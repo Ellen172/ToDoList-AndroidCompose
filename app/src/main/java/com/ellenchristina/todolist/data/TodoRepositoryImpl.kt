@@ -8,7 +8,7 @@ class TodoRepositoryImpl (
     private val dao: TodoDao
 ) : TodoRepository {
 
-    override suspend fun insert(title: String, description: String) {
+    override suspend fun insert(title: String, description: String?) {
         val entity = TodoEntity(
             title = title,
             description = description,
